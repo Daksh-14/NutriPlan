@@ -19,11 +19,11 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World');
 })
-app.use('/api/blogs',blogs);
-app.use('/api/user',signUp);
-app.use('/api/chatbot',chatBot);
-app.use('/api/nutrition',nutrition);
-app.use('/api/tracker',tracker);
+app.use('http://localhost:3000/blogs',blogs);
+app.use('http://localhost:3000/user',signUp);
+app.use('http://localhost:3000/chatbot',chatBot);
+app.use('http://localhost:3000/nutrition',nutrition);
+app.use('http://localhost:3000/tracker',tracker);
 app.use(cookieParser());
 
 const server = app.listen(PORT,()=>{  
