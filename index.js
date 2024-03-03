@@ -19,11 +19,11 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World');
 })
-app.use('/api/blogs',blogs);
-app.use('/api/user',signUp);
-app.use('/api/chatbot',chatBot);
-app.use('/api/nutrition',nutrition);
-app.use('/api/tracker',tracker);
+app.use(`http://localhost:${process.env.PORT}/blogs`,blogs);
+app.use(`http://localhost:${process.env.PORT}/user`,signUp);
+app.use(`http://localhost:${process.env.PORT}/chatbot`,chatBot);
+app.use(`http://localhost:${process.env.PORT}/nutrition`,nutrition);
+app.use(`http://localhost:${process.env.PORT}/tracker`,tracker);
 app.use(cookieParser());
 
 const server = app.listen(PORT,()=>{  
