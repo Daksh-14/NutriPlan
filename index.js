@@ -6,6 +6,7 @@ import nutrition from './routes/nutrition.js';
 import tracker from './routes/tracker.js';
 import cookieParser from 'cookie-parser';
 import blogs from './routes/blog.js';
+import cors from 'cors';
 import 'dotenv/config'
 const PORT=process.env.PORT;
 const app = express();
@@ -14,7 +15,7 @@ db.connect();
 }catch{
     console.log(error);
 }
-
+app.use(cors())
 app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World');
